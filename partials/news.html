@@ -19,8 +19,10 @@
                    
             </div>
       </form>
-      <div ng-repeat ="feed in feeds">
-       <hr> <a target="_blank" href="{{feed.link}}"> {{feed.title}} -  </a>  <span class="small">{{feed.publishedDate}}</span>
-        <div class = "news-content" ng-bind-html= "feed.content"></div>
+      <div style="overflow-y:auto;">
+        <div ng-repeat ="feed in feeds" >
+         <hr> <a target="_blank" href="{{feed.link}}"> {{feed.title}} -  </a>  <span class="small">{{feed.publishedDate}}</span>
+          <div class = "news-content" ng-bind-html= "feed.content"></div>
+        </div>
       </div>
 </div>
