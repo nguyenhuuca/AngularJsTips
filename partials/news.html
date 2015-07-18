@@ -19,7 +19,7 @@
                    
             </div>
       </form>
-      <div style="overflow-y:auto;">
+      <div style="overflow-y:auto; max-height:500px;">
         <div ng-repeat ="feed in feeds" >
          <hr> <a target="_blank" href="{{feed.link}}"> {{feed.title}} -  </a>  <span class="small">{{feed.publishedDate}}</span>
           <div class = "news-content" ng-bind-html= "feed.content"></div>
