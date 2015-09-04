@@ -1,9 +1,16 @@
 'use strict';
 var newsModule  = angular.module('newsModule',[]);
 
-newsModule.controller("newsController",['$scope', 'FeedService', function ($scope, FeedService){
+newsModule.controller("newsController",['$scope','$http', 'FeedService', function ($scope, $http,FeedService){
 	//todo somwthing
 		$scope.loadButonText  = "Load"
+		$http.get('vnexpress.net',{
+			params:{
+				text:"Abc"
+			};
+		}).then(function(response){
+			console.log(response);
+		})
 		$scope.loadFeed = function (e) {
  
 		    FeedService.parseFeed($scope.feedSrc).then(
