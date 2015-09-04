@@ -4,13 +4,12 @@ var newsModule  = angular.module('newsModule',[]);
 newsModule.controller("newsController",['$scope','$http', 'FeedService', function ($scope, $http,FeedService){
 	//todo somwthing
 		$scope.loadButonText  = "Load";
-		$http.get('http://vnexpress.net',{
-			params:{
-				text:"Abc"
-			}
-		}).then(function(response){
-			console.log(response);
-		});
+
+		function jsonp_callback(data){
+			console.log(data.found);
+		}
+		var url = 'http://vnexpress.net?callback=jsonp_callback';
+		$http.jsonp(url);
 
 		$scope.loadFeed = function (e) {
  
