@@ -14,6 +14,19 @@ angularTipsApp.config(function($routeProvider){
 				});
 });
 
+angularTipsApp.config(function($httpProvider){
+	delete $httpProvider.defaults.headers.common['X-Requested-With'];
+}).factory('featureData',function($http){
+	return{
+		doCrossDomainGet: function() {
+                return $http({
+                    url:'http://vnexpress.net',
+                    method: 'GET'
+                })
+            }       
+	}
+});
+
 
 
 angularTipsApp.factory('FeedService',['$http',function($http){
