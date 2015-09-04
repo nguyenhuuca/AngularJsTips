@@ -8,7 +8,7 @@ newsModule.controller("newsController",['$scope','$http', 'FeedService', functio
 		function jsonp_callback(data){
 			console.log(data.found);
 		}
-		var url = var url = "http://public-api.wordpress.com/rest/v1/sites/wtmpeachtest.wordpress.com/posts?callback=jsonp_callback";
+		var url = "http://public-api.wordpress.com/rest/v1/sites/wtmpeachtest.wordpress.com/posts?callback=jsonp_callback";
 		$http.jsonp(url);
 
 		$scope.loadFeed = function (e) {
