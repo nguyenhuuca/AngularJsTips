@@ -15,8 +15,9 @@ angularTipsApp.config(function($routeProvider){
 });
 
 angularTipsApp.config(function($httpProvider){
-	delete $httpProvider.defaults.headers.common['X-Requested-With'];
-}).factory('featureData',function($http){
+	 delete $httpProvider.defaults.headers.common["X-Requested-With"];
+});
+/*.factory('featureData',function($http){
 	return{
 		doCrossDomainGet: function() {
                 return $http({
@@ -25,7 +26,7 @@ angularTipsApp.config(function($httpProvider){
                 })
             }       
 	}
-});
+});*/
 
 
 
